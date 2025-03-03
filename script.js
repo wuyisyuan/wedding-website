@@ -20,17 +20,29 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 輪播婚紗照
-    let slideIndex = 0;
-    function showSlides() {
-        let slides = document.getElementsByClassName("slide");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+    // 初始化Bootstrap輪播
+    var myCarousel = document.querySelector('#weddingCarousel');
+    if (myCarousel) {
+        // 檢查是否已加載Bootstrap
+        if (typeof bootstrap !== 'undefined') {
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 3000,
+                wrap: true
+            });
+        } else {
+            // 回退到原始的輪播邏輯
+            let slideIndex = 0;
+            function showSlides() {
+                let slides = document.getElementsByClassName("carousel-item");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                slides[slideIndex - 1].classList.add("active");
+                setTimeout(showSlides, 3000);
+            }
+            showSlides();
         }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 每3秒切換一次
     }
-    showSlides();
 });
