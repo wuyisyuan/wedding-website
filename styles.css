@@ -526,7 +526,9 @@ h1, h2 {
     height: 42px;
 }
 
-
+.transport-text {
+    text-align: left; /* 確保所有裝置都左對齊 */
+}
 
 .timeline-item {
     background: #fae1dd;
