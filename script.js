@@ -56,4 +56,44 @@ document.addEventListener("DOMContentLoaded", function () {
             showSlides();
         }
     }
+//音樂
+ // 使用 IntersectionObserver 在滑到個人照時觸發音樂
+const portraitsSection = document.getElementById("portraits");
+const audio = document.getElementById("bg-music");
+const muteBtn = document.getElementById("mute-toggle");
+
+let hasPlayed = false;
+
+// 初始設定
+audio.volume = 0.2;
+audio.muted = false;
+muteBtn.textContent = "🔊";
+
+// 建立 IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !hasPlayed && !audio.muted) {
+            audio.play().catch(() => {
+                // 若被瀏覽器擋住，等使用者點一下頁面
+                document.addEventListener("click", () => {
+                    audio.play();
+                }, { once: true });
+            });
+            hasPlayed = true;
+        }
+    });
+}, {
+    threshold: 0.3 // 當區塊有 30% 進入畫面時觸發
+});
+
+if (portraitsSection) {
+    observer.observe(portraitsSection);
+}
+
+// 靜音按鈕控制
+muteBtn.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+});
+
 });

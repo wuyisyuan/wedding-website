@@ -205,6 +205,7 @@ h1, h2 {
     margin-top: 4px;
 }
 
+/* 基本樣式 */
 .portrait-text {
     font-size: 1.1rem;
     color: #5a2a27;
@@ -212,15 +213,28 @@ h1, h2 {
     font-weight: 500;
     padding: 15px 20px;
     background-color: #fff8f2;
-    border-left: 4px solid #d9a979;
     border-radius: 8px;
     white-space: pre-line;
 }
 
+/* 新郎段落（在 .flex-md-row-reverse 裡） → 左邊框線 */
+#portraits .row.flex-md-row-reverse .portrait-text {
+    border-left: 4px solid #d9a979;
+    text-align: left;
+}
+
+/* 新娘段落（正常順序） → 右邊框線 */
+#portraits .row:not(.flex-md-row-reverse) .portrait-text {
+    border-right: 4px solid #d9a979;
+    text-align: right;
+}
+
+/* 手機版統一置中＆取消框線 */
 @media (max-width: 768px) {
     .portrait-text {
+        border-left: none !important;
+        border-right: none !important;
         text-align: center !important;
-        margin-top: 1rem;
     }
 }
 
@@ -239,6 +253,29 @@ h1, h2 {
 .btn-wedding:hover {
     background: #a52a2a;
 }
+
+/**音樂的部分*/
+.mute-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #5a2a27;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+}
+
+.mute-btn:hover {
+    background-color: #fff3ec;
+}
+
 
 /* 響應式調整 */
 @media (max-width: 768px) {
