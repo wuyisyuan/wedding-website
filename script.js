@@ -83,7 +83,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.3 // 當區塊有 30% 進入畫面時觸發
+    threshold: 0.2 // 當區塊有 30% 進入畫面時觸發
 });
 
 if (portraitsSection) {
