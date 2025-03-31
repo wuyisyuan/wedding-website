@@ -10,20 +10,52 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="py-4">
-        <div class="container text-center">
-            <h1>吳 | 張 婚禮</h1>
-            <p>歡迎參加我們的婚禮</p>
+    <header class="hero-image d-flex align-items-end">
+        <div class="hero-bg"></div>
+        <div class="container text-center text-white hero-text-block">
+          <div id="timer" class="hero-timer mb-3">00 天 00 時 00 分 00 秒</div>
+          <h1 class="hero-names">亦軒 & 乃文</h1>
+          <p class="hero-info">2025/5/3 (六) 12：30｜台北漢來大飯店 - 3樓-鉑金B廳</p>
         </div>
-    </header>
+      </header>
     
-    <!-- 倒數計時 -->
-    <section id="countdown" class="py-4">
-        <div class="container text-center">
-            <h2>婚禮倒數</h2>
-            <div id="timer" class="mt-3">00 天 00 時 00 分 00 秒</div>
+
+      <section id="portraits" class="py-5">
+        <div class="container">
+          <div class="row align-items-center mb-3 flex-md-row-reverse">
+            <div class="col-md-6 text-center">
+              <img src="0439.jpg" alt="新郎照片" class="img-fluid rounded shadow">
+              <p class="portrait-name mt-3">亦軒</p>
+              <div class="portrait-en">Jack</div>
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <p class="portrait-text text-md-start">
+                「在銀杏灑落的季節裡，<br>
+                你從容地走來，溫柔而堅定地踏進我的生命。<br>
+                從此，每一步都是幸福，每一天都有你陪伴，<br>
+                願我們的未來如這遍地金黃，安穩而美好。」
+              </p>
+            </div>
+          </div>
+      
+          <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+              <img src="0481.jpg" alt="新娘照片" class="img-fluid rounded shadow">
+              <p class="portrait-name mt-3">乃文</p>
+              <div class="portrait-en">Vicky</div>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <p class="portrait-text text-md-start">
+                「在銀杏紛飛的時節裡，我悄悄地等候著妳的到來，<br>
+                妳的笑容如陽光般溫暖了我的世界。<br>
+                從此，日子因有妳而更加甜美，<br>
+                每個季節都值得細細品味。」
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
+
 
     <!-- 輪播婚紗照 -->
     <section id="slideshow" class="py-4">
@@ -61,23 +93,15 @@
     <!-- 婚禮流程 -->
     <section id="schedule" class="py-4">
         <div class="container">
-            <h2 class="text-center mb-4">婚禮流程</h2>
+            <h2 class="mb-4">婚禮流程</h2>
             <div class="timeline">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="timeline-item mb-3">
-                            <div class="time">11:00</div>
-                            <div class="event">證婚儀式 - 戶外禮堂(5樓)</div>
-                        </div>
-                    </div>
+                <div class="timeline-item">
+                    <div class="time">11:00</div>
+                    <div class="event">證婚儀式 - 戶外禮堂(5樓)</div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="timeline-item mb-3">
-                            <div class="time">12:30</div>
-                            <div class="event">準時開席 - 鉑金B廳(3樓)</div>
-                        </div>
-                    </div>
+                <div class="timeline-item">
+                    <div class="time">12:30</div>
+                    <div class="event">準時開席 - 鉑金B廳(3樓)</div>
                 </div>
             </div>
         </div>
@@ -111,7 +135,7 @@
     
     <footer class="py-3">
         <div class="container text-center">
-            <p class="mb-0">感謝您的參與，期待與您共度美好時光</p>
+            <p class="mb-0">期待與你們見面！感謝您的參與，期待與您共度美好時光</p>
         </div>
     </footer>
 

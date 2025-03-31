@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Hero image zoom on scroll
+    const heroBg = document.querySelector('.hero-bg');
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (heroBg) {
+            const scale = 1 + scrollY / 1500;
+            heroBg.style.transform = `scale(${scale})`;
+        }
+    });
+        
     // 倒數計時
     function updateCountdown() {
         const weddingDate = new Date("2025-05-03T11:00:00");
