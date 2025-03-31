@@ -387,6 +387,60 @@ h1, h2 {
     }
 }
 
+/*LINE*/
+#line-group {
+    background-color: #fffdf9;
+    border-top: 1px solid #f0e5dc;
+    border-bottom: 1px solid #f0e5dc;
+}
+
+#line-group h2 {
+    color: #5a2a27;
+    font-weight: bold;
+}
+
+#line-group p {
+    font-size: 1rem;
+    color: #5a2a27;
+    line-height: 1.6;
+}
+
+.btn-line-link {
+    display: inline-block;
+    background-color: #00b900;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-line-link:hover {
+    background-color: #00a200;
+}
+
+.bubble-box {
+    background-color: #f1fdf6;
+    border-radius: 20px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    text-align: left;
+}
+
+/* 小氣泡尾巴（三角形） */
+.bubble-box::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: -15px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #f1fdf6;
+}
+
 /*交通資訊*/
 #transportation h2 {
     color: #5a2a27;
@@ -446,6 +500,34 @@ h1, h2 {
 }
 
 
+.line-float-btn {
+    position: fixed;
+    bottom: 80px; /* 比靜音鈕高一點 */
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.line-float-btn:hover {
+    transform: scale(1.05);
+}
+
+.line-icon {
+    width: 42px;
+    height: 42px;
+}
+
+
+
 .timeline-item {
     background: #fae1dd;
     color: #5a2a27;
@@ -473,6 +555,21 @@ h1, h2 {
         border-top: 4px solid #d9a979;
     }
 }
+
+#wedding-footer {
+    background-color: #fff8f2;
+    border-top: 1px solid #e5d5c3;
+    margin-top: 60px;
+}
+
+#wedding-footer p {
+    color: #5a2a27;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
 
 /* 響應式調整 */
 @media (max-width: 768px) {
